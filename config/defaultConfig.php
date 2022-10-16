@@ -1,8 +1,8 @@
 <?php
 
 return[
-    "file_path"=>"log",
-    "log_level_files"=>[
+    "file_path"=>"log",// Log storage path
+    "log_level_files"=>[ //Separate logs for levels
         "EMERGENCY"=>"emergency.log",
         "ALERT"=>"alert.log",
         "CRITICAL"=>"critical.log",
@@ -12,5 +12,5 @@ return[
         "INFO"=>"info.log",
         "DEBUG"=>"debug.log",
     ],
-    "adapters"=>[],
+    "adapters"=>[],// adapters :(
 ];
