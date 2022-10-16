@@ -12,6 +12,5 @@ return[
         "INFO"=>"info.log",
         "DEBUG"=>"debug.log",
     ],
-    "email"=>["sp1","sp2"],
     "adapters"=>[],
 ];
