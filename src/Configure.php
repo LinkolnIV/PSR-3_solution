@@ -61,9 +61,16 @@ class Configure
     private function setFilePath(): void
     {
         if (array_key_exists("file_path", $this->RawConfig) && is_string($this->RawConfig['file_path'])&& !empty($this->RawConfig['file_path'])) {
-            $this->FilePath = dirname(__FILE__, 2)."/".$this->RawConfig['file_path']."/";
+            if(is_dir(dirname(__FILE__, 2)."/".$this->RawConfig['file_path'])){
+                $this->FilePath = dirname(__FILE__, 2)."/".$this->RawConfig['file_path']."/";
+            }else{
+                mkdir(dirname(__FILE__,2)."/log");
+                $this->FilePath= dirname(__FILE__, 2)."/".$this->RawConfig['file_path']."/";
+            }
+            
         } else {
-            $this->FilePath=dirname(__FILE__, 2)."/log/";
+            mkdir(dirname(__FILE__,2)."/log");
+            $this->FilePath= dirname(__FILE__, 2)."/log/";
         }
     }
     /**
